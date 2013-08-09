@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FBC9CC3-A37D-454A-92F4-C0C47ADF8625}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceStackHelloSample.Test</RootNamespace>
+    <AssemblyName>ServiceStackHelloSample.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartAction>Program</StartAction>
+    <StartProgram>D:\Program Files (x86)\NUnit 2.6.2\bin\nunit-x86.exe</StartProgram>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\NUnit 2.6.2\bin\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack">
+      <HintPath>..\packages\ServiceStack.3.9.56\lib\net35\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\packages\ServiceStack.Common.3.9.56\lib\net35\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\packages\ServiceStack.Common.3.9.56\lib\net35\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.56\lib\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.56\lib\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\packages\ServiceStack.Redis.3.9.57\lib\net35\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface">
+      <HintPath>..\packages\ServiceStack.3.9.56\lib\net35\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.3.9.56\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceStackHelloSample.Interface\ServiceStackHelloSample.Interface.csproj">
+      <Project>{8d93a072-b31e-4714-a6a9-c32f793439d2}</Project>
+      <Name>ServiceStackHelloSample.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceStackHelloSample.ServiceModel\ServiceStackHelloSample.ServiceModel.csproj">
+      <Project>{3e05635a-f38c-4617-b9e9-0513b3a133e7}</Project>
+      <Name>ServiceStackHelloSample.ServiceModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
